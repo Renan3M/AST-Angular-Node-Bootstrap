@@ -1,0 +1,16 @@
+<main class="container">
+  <div ng-repeat="lancamento in $ctrl.listaLancamentos">	  
+	  <span>{{::lancamento.nome}}</span> <p style="display: inline-block;" ng-class="$ctrl.getClass(lancamento.receita)">({{::lancamento.valor}} * {{::lancamento.repeticoes}})</p>
+	  <div style="display: inline-block; float: right;">
+	  	<img ng-src="https://png.icons8.com/metro/1600/delete-sign.png" alt="Deletar lancamento" style="width:30px; height:30px;" ng-click="$ctrl.RemoverLancamento(lancamento)">
+
+	  	<img ng-src="https://png.icons8.com/metro/1600/edit.png" alt="Editar lancamento"style="width:30px; height:30px;" ng-click="$ctrl.EditarLancamento(lancamento)">
+	  </div>
+	  <p>({{::lancamento.categoria}}) {{::lancamento.descricao}}</p>
+	  <p>Ocorrerá {{::lancamento.repetitividade}}</p>
+	  <div style="float: right; margin-top: 10px;">
+	  <p>{{::lancamento.data | date:'medium'}}</p>
+	  </div>
+	  <hr style="clear: both;">
+  </div>
+</main>

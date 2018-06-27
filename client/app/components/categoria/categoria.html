@@ -1,0 +1,16 @@
+<main class="container">
+ 
+<lista-categorias update="$ctrl.update" remove="$ctrl.onItemRemove($event)"></lista-categorias>
+		
+	<form class="form-signin" class="mensagem">
+		<input type="text" id="nome" class="form-control" placeholder="Nome" 
+                ng-model="$ctrl.nome" required autofocus>
+
+        <textarea id="descricao" class="form-control" placeholder="Descricao" 
+                ng-model="$ctrl.descricao" required autofocus></textarea>
+                
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" 
+                ng-click="$ctrl.btnClicked()">Enviar</button>
+    </form>
+    <alert message="$ctrl.alertMsg"></alert>
+</main>

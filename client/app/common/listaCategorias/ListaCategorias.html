@@ -1,0 +1,15 @@
+<main class="container">
+  <div ng-repeat="categoria in $ctrl.listaCategorias">	  
+	  <span>{{::categoria.nome}}</span> <p style="display: inline-block;"></p>
+	  <div style="display: inline-block; float: right;">
+	  	<img ng-src="https://png.icons8.com/metro/1600/delete-sign.png" alt="Deletar categoria" style="width:30px; height:30px;" ng-click="$ctrl.RemoverCategoria(categoria)">
+
+	  	<img ng-src="https://png.icons8.com/metro/1600/edit.png" alt="Editar categoria"style="width:30px; height:30px;" ng-click="$ctrl.EditarCategoria(categoria)">
+	  </div>
+	  <p style="margin-top: 10px;">{{::categoria.descricao}}</p>
+	  <div style="float: right; margin-top: 10px;">
+	  <p>{{::categoria.data | date:'medium'}}</p>
+	  </div>
+	  <hr style="clear: both;">
+  </div>
+</main>

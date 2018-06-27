@@ -1,0 +1,16 @@
+<main class="container" style="margin-left: auto; margin-right: auto;">
+	<div id="extrato-do-ultimo-mes">
+		<h2>O saldo desse mês</h2>
+		<p id="receitas">Receita do ultimo mes: {{$ctrl.receita_ultimo_mes}}</p>
+		<p id="despesas">Despesa do ultimo mes: {{$ctrl.despesa_ultimo_mes}}</p>
+		<p id="saldo-atual">Saldo de {{$ctrl.receita_ultimo_mes - $ctrl.despesa_ultimo_mes}}</p>
+	</div>
+	<h2>Previsões para os proximos meses</h2>
+	<div ng-repeat="mes in $ctrl.rendaMensal"> <!-- Creio que seja a previsão do saldo -->
+		<p ng-if="mes.income > 0">Para o mês <b>{{mes.month}}</b>, a renda prevista com base na renda anterior é {{mes.income}}, sendo o saldo <b>positivo</b>.</p>
+		<p ng-if="mes.income < 0">Para o mês <b>{{mes.month}}</b>, a renda prevista com base na renda anterior é {{mes.income*-1}}, sendo o saldo <b>negativo</b>.</p>
+		<hr>
+	</div>
+	<h3>Para os meses que não aparecem, a renda prevista ainda não pode ser calculada.</h3>
+
+</main>

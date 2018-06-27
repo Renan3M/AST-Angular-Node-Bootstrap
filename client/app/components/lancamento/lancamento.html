@@ -1,0 +1,37 @@
+<main class="container">
+ 
+<lista-lancamentos update="$ctrl.update" remove="$ctrl.onItemRemove($event)"></lista-lancamentos>
+		
+	<form class="form-signin" class="mensagem">
+		<input type="text" id="nome" class="form-control" placeholder="Nome" 
+                ng-model="$ctrl.nome" required autofocus>
+
+        <textarea id="descricao" class="form-control" placeholder="Descricao" 
+                ng-model="$ctrl.descricao" required autofocus></textarea>
+
+        <input type="number" id="valor" class="form-control" placeholder="Valor" 
+                ng-model="$ctrl.valor" required autofocus>
+            
+        <select required ng-model="$ctrl.categoria" class="form-control col-xs-12 bg-faded">
+                        <option value="" disabled selected hidden>Selecione uma categoria</option>
+                        <option ng-repeat="categoria in $ctrl.listaCategorias" value="{{categoria.nome}}" ng-bind="categoria.nome"></option>
+                    </select>
+
+        <input type="number" id="repeticoes_despesa" class="form-control" placeholder="Repeticoes dessa despesa" ng-model="$ctrl.repeticoes_despesa" required autofocus>
+
+        <input type="text" id="repetitividade_despesa" class="form-control" placeholder="Repetitividade" ng-model="$ctrl.repetitividade_despesa" required autofocus>
+
+        <label>
+            <input type="radio" ng-model="$ctrl.receita" ng-value="false">Receita
+        </label>
+        <br/>
+        <label>
+            <input type="radio" ng-model="$ctrl.receita" ng-value="true">Despesa
+        </label>
+        <br/>    
+        
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" 
+                ng-click="$ctrl.btnClicked()">Enviar</button>
+    </form>
+    <alert message="$ctrl.alertMsg"></alert>
+</main>

@@ -1,0 +1,23 @@
+<main class="container">
+
+	<lista-noticias update="$ctrl.update" save="$ctrl.onListChange($event)" remove="$ctrl.onItemRemove($event)"></lista-noticias>
+		
+	<form class="form-signin" class="mensagem">
+		<input type="text" id="inputTitulo" class="form-control" placeholder="Titulo" 
+                ng-model="$ctrl.titulo" required autofocus>
+
+        <textarea id="textComentario" class="form-control" placeholder="Comentário..." 
+                ng-model="$ctrl.comentario" required autofocus></textarea>
+
+        <input type="text" id="inputAutor" class="form-control" placeholder="Autor" 
+                ng-model="$ctrl.autor" required autofocus>
+
+        <input type="text" id="inputImgUrl" class="form-control" placeholder="Url da imagem" 
+                ng-model="$ctrl.img_src">
+        <label>Preview da imagem</label>        
+        <img id="imgPreview" ng-src="{{$ctrl.img_src}}"/>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" 
+                ng-click="$ctrl.btnClicked()">Enviar</button>
+    </form>
+    <alert message="$ctrl.alertMsg"></alert>    
+</main>

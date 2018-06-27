@@ -1,0 +1,28 @@
+<!-- Esse codigo html não é de minha autoria, apenas o angular foi adicionado: https://bootsnipp.com/snippets/featured /google-style-login-extended-with-html5-localstorage -->
+
+<main class="container"> 
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="inputLogin" class="form-control" placeholder="Login" 
+                ng-model="$ctrl.loginInserido" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model="$ctrl.senhaInserida" required>
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" 
+                ng-click="$ctrl.btnClicked()">Sign in</button>
+            </form><!-- /form -->
+            <a href="#" class="forgot-password">
+                Forgot the password?
+            </a>
+            <a ui-sref="noticia" class="login-anonymously">
+                Login anonymously
+            </a>
+        </div>
+        <alert message="$ctrl.alertMsg"></alert>
+</main>

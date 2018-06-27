@@ -1,0 +1,31 @@
+<main class="container">
+  <div ng-repeat="noticia in $ctrl.listaNoticias" ng-if="$ctrl.showList">
+	  
+	  <img ng-if="noticia.imagem!=undefined" ng-src="{{noticia.imagem}}" alt=" Imagem da noticia" style="width:90px; height:90px;">
+	  <span>{{::noticia.titulo}}</span> <p style="display: inline-block;">({{::noticia.autor}})</p>
+	  <div style="display: inline-block; float: right;">
+	  	<img ng-src="https://png.icons8.com/metro/1600/delete-sign.png" alt="Deletar noticia" style="width:30px; height:30px;" ng-click="$ctrl.RemoverNoticia(noticia)">
+
+	  	<img ng-src="https://png.icons8.com/metro/1600/edit.png" alt="Editar noticia"style="width:30px; height:30px;" ng-click="$ctrl.EditarNoticia(noticia)">
+	  </div>
+	  <p>{{::noticia.mensagem}}</p>
+	  <div style="float: right; margin-top: 10px;">
+	  <p>{{::noticia.data | date:'medium'}}</p>
+	  </div>
+	  <hr style="clear: both;">
+  </div>
+  <div ng-if="!$ctrl.showList">
+  		<h3>Deixe em branco os campos que não deseja modificar</h3>
+  		<form class="form-signin" class="mensagem">
+  		<input type="text" id="inputNovoTitulo" class="form-control" placeholder="Novo Titulo" 
+                ng-model="$ctrl.novoTitulo" autofocus>
+
+        <textarea id="textNovoComentario" class="form-control" placeholder="Novo Comentário" ng-model="$ctrl.novoComentario" autofocus></textarea>
+
+        <input type="text" id="inputNovaImgUrl" class="form-control" placeholder="Url da nova imagem" ng-model="$ctrl.novaImg_src">
+
+        <button class="btn btn-xl btn-primary btn-block btn-signin" type="submit" 
+                ng-click="$ctrl.AtualizarNoticia()" style="margin-top: 10px;">Atualizar</button>
+        </form> 
+  </div>
+</main>
